@@ -1,0 +1,27 @@
+[
+  {
+    "Nome": "Tesouro Selic 2029",
+    "Classe": "Renda Fixa",
+    "Descricao": "T\uFFFDtulo de renda fixa com rentabilidade atrelada \uFFFD taxa Selic."
+  },
+  {
+    "Nome": "FII XP Inc. (XPML11)",
+    "Classe": "Fundos Imobili\uFFFDrios",
+    "Descricao": "Fundo de investimento imobili\uFFFDrio focado em shoppings."
+  },
+  {
+    "Nome": "A\uFFFD\uFFFDo XPTO",
+    "Classe": "Renda Vari\uFFFDvel",
+    "Descricao": "A\uFFFD\uFFFDo de uma empresa do setor de tecnologia."
+  },
+  {
+    "Nome": "Bitcoin",
+    "Classe": "Criptomoeda",
+    "Descricao": "Principal criptomoeda do mercado."
+  },
+  {
+    "Nome": "sexo",
+    "Classe": "sexo",
+    "Descricao": "sexo"
+  }
+]

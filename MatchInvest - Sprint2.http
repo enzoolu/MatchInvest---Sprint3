@@ -1,0 +1,6 @@
+@MatchInvest___Sprint2_HostAddress = http://localhost:5054
+
+GET {{MatchInvest___Sprint2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
