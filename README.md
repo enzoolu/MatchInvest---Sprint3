@@ -35,6 +35,16 @@ graph TD
     D --> E(Arquivo JSON)
 ```
 
+### Diagrama de Entidades
+
+```mermaid
+graph TD
+    A[Início] --> B(Processo);
+    B --> C{Decisão?};
+    C -->|Sim| D[Ação 1];
+    C -->|Não| E[Ação 2];
+```
+
 ### Visão Geral das Camadas
 
 - **Program.cs (Interface):** Responsável pela interação com o usuário e exibição do menu.
