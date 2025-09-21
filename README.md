@@ -101,4 +101,4 @@ Escolha a opção `11` para adicionar ou listar ativos no arquivo `ativos.json`.
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT
