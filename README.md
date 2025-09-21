@@ -35,14 +35,74 @@ graph TD
     D --> E(Arquivo JSON)
 ```
 
+---
+
 ### Diagrama de Entidades
 
 ```mermaid
-graph TD
-    A[Início] --> B(Processo);
-    B --> C{Decisão?};
-    C -->|Sim| D[Ação 1];
-    C -->|Não| E[Ação 2];
+classDiagram
+    direction LR
+
+    class Investor {
+        +int Id
+        +string Nome
+        +decimal CapitalDisponivel
+        +string ApetiteRisco
+        +string Objetivos
+        +string Preferencias
+    }
+
+    class Assessor {
+        +int Id
+        +string Nome
+        +string Certificacoes
+        +string Especializacao
+        +string Atuacao
+    }
+
+    class Ativo {
+        +string Nome
+        +string Classe
+        +string Descricao
+    }
+
+    class InvestorRepository {
+        +void AddInvestor(Investor investor)
+        +Investor GetInvestorById(int id)
+        +List~Investor~ GetAllInvestors()
+        +void UpdateInvestor(Investor investor)
+        +void DeleteInvestor(int id)
+        +int GetLastInsertedId()
+    }
+
+    class AssessorRepository {
+        +void AddAssessor(Assessor assessor)
+        +Assessor GetAssessorById(int id)
+        +List~Assessor~ GetAllAssessors()
+        +void UpdateAssessor(Assessor assessor)
+        +void DeleteAssessor(int id)
+        +int GetLastInsertedId()
+        +List~Assessor~ GetAssessoresByEspecializacao(string especializacao)
+    }
+
+    class FileHandler {
+        +List~T~ ReadJsonFile(string filePath)
+        +void WriteJsonFile(string filePath, List~T~ data)
+    }
+
+    class Program {
+        +static void Main(string[] args)
+        +static void CadastrarInvestidor(...)
+        +static void SugerirAssessor(...)
+        // ... outros métodos
+    }
+
+    Investor <--> InvestorRepository : Gerencia
+    Assessor <--> AssessorRepository : Gerencia
+    Program --> InvestorRepository : Usa
+    Program --> AssessorRepository : Usa
+    Program --> FileHandler : Usa
+    FileHandler --> Ativo : Gerencia
 ```
 
 ### Visão Geral das Camadas
