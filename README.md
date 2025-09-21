@@ -26,13 +26,14 @@ O projeto segue uma arquitetura em camadas para separar responsabilidades e faci
 
 ### Diagrama de Arquitetura
 
-
+```mermaid
 graph TD
     A[Interface de Console] --> B(Camada de Repositório)
     B --> C(Banco de Dados SQLite)
     B --> D(Camada de Serviços)
     A --> D
     D --> E(Arquivo JSON)
+```
 
 ### Visão Geral das Camadas
 
