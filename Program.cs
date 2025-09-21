@@ -16,7 +16,7 @@ namespace MatchInvest
             var assessorRepo = new AssessorRepository();
 
             Console.WriteLine("Bem-vindo ao MatchInvest - Gerenciamento de Dados!");
-            
+
             while (true)
             {
                 Console.Clear();
@@ -100,7 +100,7 @@ namespace MatchInvest
                         Console.ReadKey();
                         break;
                 }
-                
+
                 if (choice != "0")
                 {
                     Console.WriteLine("\nOperação concluída. Pressione qualquer tecla para voltar ao menu principal...");
@@ -108,8 +108,7 @@ namespace MatchInvest
                 }
             }
         }
-        
-        // --- Métodos de Investidor (CRUD) ---
+
         static void CadastrarInvestidor(InvestorRepository repo)
         {
             Console.WriteLine("\n--- Cadastro de Investidor ---");
@@ -138,7 +137,6 @@ namespace MatchInvest
             };
 
             repo.AddInvestor(novoInvestidor);
-            // Exibe o ID após o cadastro
             var investorId = repo.GetLastInsertedId();
             Console.WriteLine($"\nInvestidor cadastrado com sucesso! ID: {investorId}");
         }
@@ -245,8 +243,7 @@ namespace MatchInvest
                 Console.WriteLine("ID inválido.");
             }
         }
-        
-        // --- Métodos de Assessor (CRUD) ---
+
         static void CadastrarAssessor(AssessorRepository repo)
         {
             Console.WriteLine("\n--- Cadastro de Assessor ---");
@@ -254,7 +251,7 @@ namespace MatchInvest
             var nome = Console.ReadLine();
             Console.Write("Certificações: ");
             var certificacoes = Console.ReadLine();
-            Console.Write("Especialização: ");
+            Console.Write("Especialização (Ex: Renda Fixa, Renda Variável, Criptomoedas): ");
             var especializacao = Console.ReadLine();
             Console.Write("Histórico de Atuação: ");
             var atuacao = Console.ReadLine();
@@ -263,12 +260,11 @@ namespace MatchInvest
             {
                 Nome = nome,
                 Certificacoes = certificacoes,
-                Especializacao = especializacao,
+                Especializacao = especializacao.ToLower(),
                 Atuacao = atuacao
             };
 
             repo.AddAssessor(novoAssessor);
-            // Exibe o ID após o cadastro
             var assessorId = repo.GetLastInsertedId();
             Console.WriteLine($"\nAssessor cadastrado com sucesso! ID: {assessorId}");
         }
@@ -316,7 +312,7 @@ namespace MatchInvest
                 Console.WriteLine("ID inválido.");
             }
         }
-        
+
         static void AtualizarAssessor(AssessorRepository repo)
         {
             Console.WriteLine("\n--- Atualizar Assessor ---");
@@ -356,7 +352,7 @@ namespace MatchInvest
                 Console.WriteLine("ID inválido.");
             }
         }
-        
+
         static void ExcluirAssessor(AssessorRepository repo)
         {
             Console.WriteLine("\n--- Excluir Assessor ---");
@@ -372,14 +368,13 @@ namespace MatchInvest
             }
         }
 
-        // --- Gerenciamento de Arquivos JSON ---
         static void GerenciarAtivos()
         {
             Console.Clear();
             Console.WriteLine("\n--- Gerenciamento de Ativos ---");
             Console.WriteLine("1. Adicionar novo ativo");
             Console.WriteLine("2. Listar todos os ativos");
-            
+
             var choice = Console.ReadLine();
             switch (choice)
             {
@@ -441,7 +436,6 @@ namespace MatchInvest
             }
         }
 
-        // --- Lógica de Negócio (Match Investidor-Assessor) ---
         static void SugerirAssessor(InvestorRepository investorRepo, AssessorRepository assessorRepo)
         {
             Console.WriteLine("\n--- Sugestão de Assessores ---");
@@ -454,7 +448,7 @@ namespace MatchInvest
                     Console.WriteLine("Investidor não encontrado.");
                     return;
                 }
-                
+
                 var especializacaoRecomendada = string.Empty;
                 switch (investidor.ApetiteRisco.ToLower())
                 {
@@ -473,7 +467,7 @@ namespace MatchInvest
                 }
 
                 var assessoresRecomendados = assessorRepo.GetAssessoresByEspecializacao(especializacaoRecomendada);
-                
+
                 if (assessoresRecomendados.Any())
                 {
                     Console.WriteLine($"\nAssessores recomendados para seu perfil de risco ({investidor.ApetiteRisco}):");

@@ -93,7 +93,6 @@ namespace MatchInvest.Data
             }
         }
 
-        // Lógica de negócio para buscar assessores por especialização
         public List<Assessor> GetAssessoresByEspecializacao(string especializacao)
         {
             var assessores = new List<Assessor>();
@@ -122,9 +121,6 @@ namespace MatchInvest.Data
             return assessores;
         }
 
-        // --- MÉTODOS QUE DEVEM SER ADICIONADOS ---
-
-        // Método para listar todos os assessores
         public List<Assessor> GetAllAssessors()
         {
             var assessors = new List<Assessor>();
@@ -151,7 +147,6 @@ namespace MatchInvest.Data
             return assessors;
         }
 
-        // Método para obter o ID do último registro inserido
         public int GetLastInsertedId()
         {
             using (var connection = new SqliteConnection(_context.DatabasePath))
