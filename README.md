@@ -87,12 +87,15 @@ Escolha a opção `11` para adicionar ou listar ativos no arquivo `ativos.json`.
 
 ---
 
-##👨‍💻 Integrantes
--Enzo Luiz Goulart - RM99666
--Gustavo Henrique Santos Bonfim - RM98864
--Kayky Paschoal Ribeiro - RM99929
--Lucas Yuji Farias Umada - RM99757
--Natan Eguchi dos Santos - RM98720
+## 👨‍💻 Integrantes
+    Enzo Luiz Goulart - RM99666
+    Gustavo Henrique Santos Bonfim - RM98864
+    Kayky Paschoal Ribeiro - RM99929
+    Lucas Yuji Farias Umada - RM99757
+    Natan Eguchi dos Santos - RM98720
+
+
+---
 
 
 ## 📄 Licença
